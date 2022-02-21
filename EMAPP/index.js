@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 5000;
 
-const DB_NAME = "Employee";
-const DB_HOST = "localhost";
-const DB_USERNAME = "root";
-const DB_PASSWORD = "root";
+const DB_NAME = "employee";
+const DB_HOST = "database-1.czerqcacwwpd.us-east-1.rds.amazonaws.com";
+const DB_USERNAME = "admin";
+const DB_PASSWORD = "prasanna";
 
 const dbName = DB_NAME;
 const dbHost = DB_HOST;
