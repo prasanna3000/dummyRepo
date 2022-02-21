@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0 auto;
+            padding-top: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 4px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 100%;
+          background-color: #417cb3;
+          color: white;
+          padding: 14px 20px;
+          margin: 4px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          left: 50%;
+          width: 200px;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #417cb3;
+          width: 200px;
+        }
+        p {
+            width: 20%;
+            left: 45%;
+            color: #417cb3;
+            font-size: larger;
+        }
+        </style>
+</head>
+
+<body class="container">
+    <p>Employee Registration Portal</p>
+    <form action="/addEmployee" method="post" onsubmit="return ValidateForm(this);">
+        <script type="text/javascript">
+            function ValidateForm(frm) {
+                if (frm.First_Name.value == "") { alert('First name is required.'); frm.First_Name.focus(); return false; }
+                if (frm.Last_Name.value == "") { alert('Last name is required.'); frm.Last_Name.focus(); return false; }
+                if (frm.Email_Address.value == "") { alert('Email address is required.'); frm.Email_Address.focus(); return false; }
+                if (frm.Email_Address.value.indexOf("@") < 1 || frm.Email_Address.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.Email_Address.focus(); return false; }
+                if (frm.Position.value == "") { alert('Position is required.'); frm.Position.focus(); return false; }
+                if (frm.Phone.value == "") { alert('Phone is required.'); frm.Phone.focus(); return false; }
+                return true;
+            }
+        </script>
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td style="width: 50%">
+                    <label for="First_Name"><b>First name *</b></label><br />
+                    <input name="First_Name" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+                </td>
+                <td style="width: 50%">
+                    <label for="Last_Name"><b>Last name *</b></label><br />
+                    <input name="Last_Name" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Email_Address"><b>Email *</b></label><br />
+                    <input name="Email_Address" type="text" maxlength="100" style="width:100%;max-width: 535px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Portfolio"><b>Portfolio website</b></label><br />
+                    <input name="Portfolio" type="text" maxlength="255" value="https://"
+                        style="width:100%;max-width: 535px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Position"><b>Position you are applying for *</b></label><br />
+                    <input name="Position" type="text" maxlength="100" style="width:100%;max-width: 535px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Salary"><b>Salary requirements</b></label><br /> <input name="Salary" type="text"
+                        maxlength="50" style="width:100%;max-width: 260px" />
+                </td>
+                <td>
+                    <label for="StartDate"><b>When can you start?</b></label><br />
+                    <input name="StartDate" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Phone"><b>Phone *</b></label><br />
+                    <input name="Phone" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+                </td>
+                <td>
+                    <label for="Fax"><b>Fax</b></label><br />
+                    <input name="Fax" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Relocate"><b>Are you willing to relocate?</b></label><br /><br/>
+                    <input name="Relocate" type="radio" value="Yes" checked="checked" /> Yes
+                    <input name="Relocate" type="radio" value="No" /> No
+                    <input name="Relocate" type="radio" value="NotSure" /> Not sure
+                </td>
+            </tr>
+            <tr><td></td><td></td></tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Organization"><b>Last company you worked for</b></label><br />
+                    <input name="Organization" type="text" maxlength="100" style="width:100%;max-width: 535px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Reference"><b>Reference / Comments / Questions</b></label><br />
+                    <textarea name="Reference" rows="7" cols="40" style="width:100%;max-width: 535px"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Save Employee"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
